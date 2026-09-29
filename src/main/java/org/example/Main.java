@@ -1,17 +1,31 @@
 package org.example;
-
+import com.karendavila.deskops.model.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Creates a test ticket to verify that the Ticket class works correctly
+        Ticket ticket = new Ticket(
+                "VPN Connection Failure",
+                "VPN disconnects immediately after authentication.",
+                15,
+                Urgency.HIGH,
+                TicketType.INCIDENT,
+                AffectedSystem.VPN,
+                Department.FINANCE
+        );
+
+        // Prints ticket information using getters
+        System.out.println("Title: " + ticket.getTitle());
+        System.out.println("Description: " + ticket.getDescription());
+        System.out.println("Affected Users: " + ticket.getAffectedUsers());
+        System.out.println("Urgency: " + ticket.getUrgency());
+        System.out.println("Ticket Type: " + ticket.getTicketType());
+        System.out.println("Affected System: " + ticket.getAffectedSystem());
+        System.out.println("Department: " + ticket.getDepartment());
+        System.out.println("Status: " + ticket.getTicketStatus());
+        System.out.println("Created At: " + ticket.getCreatedAt());
+
     }
 }
